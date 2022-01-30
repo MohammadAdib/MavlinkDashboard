@@ -1,16 +1,18 @@
-package mohammad.adib.mavlinkdashboard
+package mohammad.adib.mavlinkdashboard.ui.livedata
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import mohammad.adib.mavlinkdashboard.MavlinkComm
+import mohammad.adib.mavlinkdashboard.R
 
-class RawDataAdapter(
+class LiveDataAdapter(
     private val mavlinkComm: MavlinkComm,
     private val listener: OnSelectionChangedListener
 ) :
-    RecyclerView.Adapter<RawDataAdapter.ViewHolder>() {
+    RecyclerView.Adapter<LiveDataAdapter.ViewHolder>() {
 
     private val dataSet = mutableListOf<String>().also {
         it.addAll(mavlinkComm.mavlinkData.keys.toMutableList().sorted())

@@ -1,4 +1,4 @@
-package mohammad.adib.mavlinkdashboard
+package mohammad.adib.mavlinkdashboard.ui.livedata
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,6 +11,9 @@ import com.github.mikephil.charting.components.YAxis.AxisDependency
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import mohammad.adib.mavlinkdashboard.MavlinkComm
+import mohammad.adib.mavlinkdashboard.MavlinkDashboardApp
+import mohammad.adib.mavlinkdashboard.R
 import mohammad.adib.mavlinkdashboard.databinding.FragmentRawDataBinding
 import kotlin.math.roundToInt
 

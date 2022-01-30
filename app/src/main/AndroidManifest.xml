@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MavlinkDashboard">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".NavActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

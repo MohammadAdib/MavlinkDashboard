@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="mohammad.adib.mavlinkdashboard.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="mohammad.adib.mavlinkdashboard.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="mohammad.adib.mavlinkdashboard.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="mohammad.adib.mavlinkdashboard.ui.livedata.LiveDataFragment"
+        android:label="@string/menu_live_data"
+        tools:layout="@layout/fragment_live_data" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="mohammad.adib.mavlinkdashboard.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="mohammad.adib.mavlinkdashboard.ui.pinnedlivedata.PinnedLiveDataFragment"
+        android:label="@string/menu_pinned_live_data"
+        tools:layout="@layout/fragment_pinned_live_data" />
 </navigation>
