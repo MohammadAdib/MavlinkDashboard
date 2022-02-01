@@ -1,4 +1,4 @@
-package mohammad.adib.mavlinkdashboard.ui
+package mohammad.adib.mavlinkdashboard.ui.adapter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
