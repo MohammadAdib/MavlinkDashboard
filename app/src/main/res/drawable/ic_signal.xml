@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillAlpha="0.01"
+        android:fillColor="#ffffff"
+        android:pathData="M0,0h48v48h-48z" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M38.1421,38.1421C41.7614,34.5228 44,29.5228 44,23.9999C44,18.4771 41.7614,13.4771 38.1421,9.8578"
+        android:strokeWidth="4"
+        android:strokeColor="#FFF"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M9.8579,9.8578C6.2386,13.4771 4,18.4771 4,23.9999C4,29.5228 6.2386,34.5228 9.8579,38.1421"
+        android:strokeWidth="4"
+        android:strokeColor="#FFF"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M15.1005,14.1005C12.567,16.634 11,20.134 11,24C11,27.866 12.567,31.366 15.1005,33.8995"
+        android:strokeWidth="4"
+        android:strokeColor="#FFF"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M32.8995,33.8995C35.433,31.366 37,27.866 37,24C37,20.134 35.433,16.634 32.8995,14.1005"
+        android:strokeWidth="4"
+        android:strokeColor="#FFF"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24,43.9999V33.9999"
+        android:strokeWidth="4"
+        android:strokeColor="#FFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24,3.9999V13.9999"
+        android:strokeWidth="4"
+        android:strokeColor="#FFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#FFF"
+        android:pathData="M24,23.9999m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+</vector>

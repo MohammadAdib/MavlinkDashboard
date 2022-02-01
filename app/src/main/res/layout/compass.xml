@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@drawable/compass_overlay">
 
     <ImageView
         android:layout_width="match_parent"
@@ -15,8 +15,8 @@
         android:id="@+id/vehicle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleX="0.5"
-        android:scaleY="0.5"
-        android:src="@drawable/ic_glider" />
+        android:scaleX="0.4"
+        android:scaleY="0.4"
+        android:src="@drawable/ic_arrow" />
 
 </FrameLayout>

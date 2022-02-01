@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".ui.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1">
 
         <com.mapbox.maps.MapView xmlns:mapbox="http://schemas.android.com/apk/res-auto"
@@ -99,40 +99,27 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/attitude_indicator_container"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="@dimen/padding_med"
-            android:layout_marginTop="40dp"
-            app:cardCornerRadius="40dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <mohammad.adib.mavlinkdashboard.ui.view.AttitudeIndicator
-                android:id="@+id/attitude_indicator"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </androidx.cardview.widget.CardView>
-
-        <mohammad.adib.mavlinkdashboard.ui.view.Compass
-            android:id="@+id/compass_indicator"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="@dimen/padding_med"
-            android:layout_marginBottom="80dp"
-            app:layout_constraintStart_toStartOf="@id/attitude_indicator_container"
-            app:layout_constraintTop_toBottomOf="@id/attitude_indicator_container" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:padding="@dimen/padding_med">
 
+        <mohammad.adib.mavlinkdashboard.ui.view.AttitudeIndicator
+            android:id="@+id/attitude_indicator"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <mohammad.adib.mavlinkdashboard.ui.view.Compass
+            android:id="@+id/compass_indicator"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="@dimen/padding_med"
+            app:layout_constraintStart_toEndOf="@id/attitude_indicator"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

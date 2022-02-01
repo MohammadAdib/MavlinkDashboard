@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.mapbox.geojson.Point
 import com.mapbox.maps.CameraOptions
@@ -23,7 +22,6 @@ import com.mapbox.maps.plugin.annotation.annotations
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManager
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions
 import com.mapbox.maps.plugin.annotation.generated.createPointAnnotationManager
-import com.mapbox.maps.plugin.gestures.gestures
 import mohammad.adib.mavlinkdashboard.R
 import mohammad.adib.mavlinkdashboard.databinding.FragmentDashboardBinding
 
@@ -36,7 +34,6 @@ class DashboardFragment : Fragment() {
     private lateinit var map: MapboxMap
     private lateinit var mapView: MapView
     private lateinit var pointAnnotationManager: PointAnnotationManager
-    private var point: PointAnnotationOptions? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,16 +51,16 @@ class DashboardFragment : Fragment() {
         pointAnnotationManager = annotationApi.createPointAnnotationManager()
         map.loadStyleUri(Style.SATELLITE_STREETS) {
             addAnnotationToMap()
-            homeViewModel.location.observe(viewLifecycleOwner, Observer {
+            homeViewModel.location.observe(viewLifecycleOwner, {
                 val annotation = pointAnnotationManager.annotations[0]
                 val point = Point.fromLngLat(it.lon, it.lat)
                 annotation.point = point
                 pointAnnotationManager.update(annotation)
                 mapView.getMapboxMap().setCamera(CameraOptions.Builder().center(point).build())
             })
-            homeViewModel.heading.observe(viewLifecycleOwner, Observer {
+            homeViewModel.heading.observe(viewLifecycleOwner, {
                 val annotation = pointAnnotationManager.annotations[0]
-                annotation.iconRotate = it + 45
+                annotation.iconRotate = it + 45 - map.cameraState.bearing
                 pointAnnotationManager.update(annotation)
             })
         }
