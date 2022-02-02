@@ -15,10 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MavlinkDashboard">
         <activity
-            android:name=".NavActivity"
+            android:name="mohammad.adib.mavlinkdashboard.ui.activity.LiveDataActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="mohammad.adib.mavlinkdashboard.ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

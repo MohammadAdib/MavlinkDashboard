@@ -6,14 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import mohammad.adib.mavlinkdashboard.MavlinkComm;
-import mohammad.adib.mavlinkdashboard.MavlinkDashboardApp;
+import com.google.gson.JsonObject;
+
 import mohammad.adib.mavlinkdashboard.R;
 
-public class AttitudeIndicator extends FrameLayout implements MavlinkComm.MavlinkListener {
+public class AttitudeIndicator extends FrameLayout {
 
     private View main;
     private View rollIndicator;
@@ -35,7 +34,6 @@ public class AttitudeIndicator extends FrameLayout implements MavlinkComm.Mavlin
     }
 
     private void init() {
-        MavlinkDashboardApp.getInstance().mavlinkComm.getListeners().add(this);
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.attitude_indicator, this, true);
         main = findViewById(R.id.main);
@@ -45,29 +43,15 @@ public class AttitudeIndicator extends FrameLayout implements MavlinkComm.Mavlin
         main.setScaleY(5);
     }
 
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        MavlinkDashboardApp.getInstance().mavlinkComm.getListeners().remove(this);
-    }
-
-    @Override
-    public void onNewType() {
-        // Ignore
-    }
-
-    @Override
-    public void onUpdate(@NonNull String type) {
-        if (type.equals("Attitude")) {
-            String pitchString = MavlinkDashboardApp.getInstance().mavlinkComm.getMavlinkData().get(type).get("pitch").toString();
-            String rollString = MavlinkDashboardApp.getInstance().mavlinkComm.getMavlinkData().get(type).get("roll").toString();
-            double pitch = Double.parseDouble(pitchString);
-            double roll = Double.parseDouble(rollString);
-            int halfHeight = getHeight() / 2;
-            double transY = (halfHeight * (Math.toDegrees(pitch) / 45)) / 3.0;
-            ground.setTranslationY((float) Math.max(-getHeight(), Math.min(getHeight(), transY)));
-            main.setRotation((float) -Math.toDegrees(roll));
-            rollIndicator.setRotation((float) -Math.toDegrees(roll));
-        }
+    public void onUpdate(JsonObject data) {
+        String pitchString = data.get("pitch").toString();
+        String rollString = data.get("roll").toString();
+        double pitch = Double.parseDouble(pitchString);
+        double roll = Double.parseDouble(rollString);
+        int halfHeight = getHeight() / 2;
+        double transY = (halfHeight * (Math.toDegrees(pitch) / 45)) / 3.0;
+        ground.setTranslationY((float) Math.max(-getHeight(), Math.min(getHeight(), transY)));
+        main.setRotation((float) -Math.toDegrees(roll));
+        rollIndicator.setRotation((float) -Math.toDegrees(roll));
     }
 }

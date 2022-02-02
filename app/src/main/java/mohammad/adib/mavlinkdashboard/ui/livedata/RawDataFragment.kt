@@ -11,7 +11,7 @@ import com.github.mikephil.charting.components.YAxis.AxisDependency
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import mohammad.adib.mavlinkdashboard.MavlinkComm
+import mohammad.adib.mavlinkdashboard.util.MavlinkComm
 import mohammad.adib.mavlinkdashboard.MavlinkDashboardApp
 import mohammad.adib.mavlinkdashboard.R
 import mohammad.adib.mavlinkdashboard.databinding.FragmentRawDataBinding

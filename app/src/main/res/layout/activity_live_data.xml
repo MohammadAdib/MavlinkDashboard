@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
+    tools:context=".ui.activity.LiveDataActivity">
 
     <fragment
-        android:id="@+id/dashboard"
-        android:name="mohammad.adib.mavlinkdashboard.ui.dashboard.DashboardFragment"
+        android:id="@+id/live_data_fragment"
+        android:name="mohammad.adib.mavlinkdashboard.ui.livedata.LiveDataFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

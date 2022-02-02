@@ -1,11 +1,11 @@
-package mohammad.adib.mavlinkdashboard.ui.livedata
+package mohammad.adib.mavlinkdashboard.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import mohammad.adib.mavlinkdashboard.MavlinkComm
+import mohammad.adib.mavlinkdashboard.util.MavlinkComm
 import mohammad.adib.mavlinkdashboard.R
 
 class LiveDataAdapter(

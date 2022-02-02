@@ -3,6 +3,8 @@ package mohammad.adib.mavlinkdashboard;
 import android.app.Application;
 import android.content.SharedPreferences;
 
+import mohammad.adib.mavlinkdashboard.util.MavlinkComm;
+
 public class MavlinkDashboardApp extends Application {
 
     private static MavlinkDashboardApp app;

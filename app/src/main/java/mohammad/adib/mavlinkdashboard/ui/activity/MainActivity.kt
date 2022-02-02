@@ -1,9 +1,10 @@
-package mohammad.adib.mavlinkdashboard
+package mohammad.adib.mavlinkdashboard.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import mohammad.adib.mavlinkdashboard.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

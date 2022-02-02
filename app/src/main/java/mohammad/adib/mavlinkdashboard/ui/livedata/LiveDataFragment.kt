@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import mohammad.adib.mavlinkdashboard.MavlinkComm
+import mohammad.adib.mavlinkdashboard.util.MavlinkComm
 import mohammad.adib.mavlinkdashboard.MavlinkDashboardApp
 import mohammad.adib.mavlinkdashboard.databinding.FragmentLiveDataBinding
+import mohammad.adib.mavlinkdashboard.ui.adapter.LiveDataAdapter
 import mohammad.adib.mavlinkdashboard.ui.adapter.RawDataPagerAdapter
 
 class LiveDataFragment : Fragment(), MavlinkComm.MavlinkListener,
